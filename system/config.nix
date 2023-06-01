@@ -7,11 +7,13 @@
     (inputs.impermanence + "/nixos.nix")
 
     # You can also split up your configuration and import pieces of it here:
-    ./filesystems.nix
-    ./impermanence.nix
-    ./users.nix
-    ./boot.nix
-    ./software.nix
+    ./filesystems
+    ./users
+    ./boot
+    ./software
+    ./misc
+
+    ./software/desktop/plasma5.nix
 
     # Import your generated (nixos-generate-config) hardware configuration
     ./hardware.nix
@@ -60,26 +62,17 @@
     };
   };
 
-  ### begin system configuration
-  ## networking
-  networking.hostName = "zeppy";
-  networking.networkmanager.enable = true;
-
-  ## time
-  time.timeZone = "Europe/Warsaw";
-
-  ## console
-  i18n.defaultLocale = "en_GB.UTF-8";
-  console = {
-    font = "Lat2-Terminus16";
-  #  keyMap = "us";
-  #  useXkbConfig = true; # use xkbOptions in tty.
+  environment.persistence."/@" = {
+    directories = [
+      "/etc/nixos"
+      "/etc/NetworkManager"
+      "/var/log"
+    ];
+    files = [
+      "/etc/machine-id"
+      "/etc/nix/id_rsa"
+    ];
   };
-
-  ## firewall
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  networking.firewall.enable = true;
 
   ## https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "23.11";

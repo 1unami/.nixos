@@ -1,6 +1,4 @@
 {
-  users.mutableUsers = false;
-
   users.users.skk = {
     isNormalUser = true;
     home = "/home/commander";
