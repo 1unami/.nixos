@@ -13,7 +13,8 @@
 
   boot.initrd.luks.devices = {
     luks_system = {
-      device = "/dev/vda2";
+      # cryptsetup config /dev/xxxx --label luks_system
+      device = "/dev/disk/by-label/luks_system";
       preLVM = true;
     };
   };
