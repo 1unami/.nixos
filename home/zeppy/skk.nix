@@ -34,6 +34,41 @@
 
   programs.home-manager.enable = true;
 
+  home.packages = with pkgs; [
+    any-nix-shell
+
+    lutris
+    discord
+    audacious
+    vlc
+    krita
+    vscode-fhs
+
+    vivaldi
+    vivaldi-ffmpeg-codecs
+  ];
+
+  programs.fish = {
+    enable = true;
+    shellInit = ''
+      set -Ux PIPENV_VENV_IN_PROJECT 1
+      set -x HSA_OVERRIDE_GFX_VERSION 10.3.0
+      set -x PYTORCH_CUDA_ALLOC_CONF max_split_size_mb=1024
+
+      set -x WINEDLLOVERRIDES winemenubuilder.exe=d
+    '';
+    interactiveShellInit = ''
+      set fish_greeting # Disable greeting
+    '';
+    promptInit = ''
+      any-nix-shell fish --info-right | source
+    '';
+    shellAliases = {
+      ".." = "cd ..";
+      "..." = "cd ../..";
+    };
+  };
+
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
 
