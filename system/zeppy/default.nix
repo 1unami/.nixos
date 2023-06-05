@@ -71,6 +71,11 @@
       "/etc/nix/id_rsa"
     ];
   };
+  
+  zramSwap = {
+    enable = true;
+    memoryPercent = 100;
+  };
 
   console.earlySetup = true;
   hardware.cpu.amd.updateMicrocode = true;
