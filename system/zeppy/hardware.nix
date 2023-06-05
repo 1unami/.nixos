@@ -5,10 +5,10 @@
 
 {
   imports =
-    [ (modulesPath + "/profiles/qemu-guest.nix")
+    [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
-  boot.initrd.availableKernelModules = [ "ahci" "xhci_pci" "virtio_pci" "virtio_scsi" "sr_mod" "virtio_blk" ];
+  boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" ];
   boot.initrd.kernelModules = [ "dm-snapshot" ];
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
@@ -18,27 +18,27 @@
       fsType = "tmpfs";
     };
 
-  fileSystems."/@" =
-    { device = "/dev/disk/by-uuid/63ce8cfd-a9b5-4822-ab25-d27f0ba8eb28";
-      fsType = "btrfs";
-      options = [ "subvol=@" ];
-    };
-
-  fileSystems."/nix" =
-    { device = "/dev/disk/by-uuid/63ce8cfd-a9b5-4822-ab25-d27f0ba8eb28";
-      fsType = "btrfs";
-      options = [ "subvol=nix" ];
+  fileSystems."/boot" =
+    { device = "/dev/disk/by-uuid/36CB-7B61";
+      fsType = "vfat";
     };
 
   fileSystems."/home" =
-    { device = "/dev/disk/by-uuid/63ce8cfd-a9b5-4822-ab25-d27f0ba8eb28";
+    { device = "/dev/disk/by-uuid/20eab09e-ae3e-4350-a493-01cf0f4e2cfe";
       fsType = "btrfs";
       options = [ "subvol=home" ];
     };
 
-  fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/C122-5572";
-      fsType = "vfat";
+  fileSystems."/nix" =
+    { device = "/dev/disk/by-uuid/20eab09e-ae3e-4350-a493-01cf0f4e2cfe";
+      fsType = "btrfs";
+      options = [ "subvol=nix" ];
+    };
+
+  fileSystems."/@" =
+    { device = "/dev/disk/by-uuid/20eab09e-ae3e-4350-a493-01cf0f4e2cfe";
+      fsType = "btrfs";
+      options = [ "subvol=@" ];
     };
 
   swapDevices = [ ];
@@ -48,7 +48,10 @@
   # still possible to use this option, but it's recommended to use it in conjunction
   # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
   networking.useDHCP = lib.mkDefault true;
-  # networking.interfaces.enp1s0.useDHCP = lib.mkDefault true;
+  # networking.interfaces.eno1.useDHCP = lib.mkDefault true;
+  # networking.interfaces.enp4s0f4u3u4.useDHCP = lib.mkDefault true;
+  # networking.interfaces.usb0.useDHCP = lib.mkDefault true;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
+  hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }

@@ -78,7 +78,6 @@
   };
 
   console.earlySetup = true;
-  hardware.cpu.amd.updateMicrocode = true;
 
   ## enable periodic fstrim
   services.fstrim.enable = true;
