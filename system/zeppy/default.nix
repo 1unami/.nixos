@@ -72,6 +72,12 @@
     ];
   };
 
+  console.earlySetup = true;
+  hardware.cpu.amd.updateMicrocode = true;
+
+  ## enable periodic fstrim
+  services.fstrim.enable = true;
+
   ## networking
   networking.hostName = "zeppy";
   networking.networkmanager.enable = true;
