@@ -33,6 +33,11 @@
   };
 
   programs.home-manager.enable = true;
+  
+  programs.mangohud = {
+    enable = true;
+    enableSessionWide = true;
+  };
 
   home.packages = with pkgs; [
     any-nix-shell
