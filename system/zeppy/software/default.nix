@@ -3,7 +3,7 @@
     ./desktop/plasma5.nix
   ];
 
-  services.tlp.enable = true;
+  #services.tlp.enable = true;
   programs.steam.enable = true; # steam needs to by installed system-wide :(
 
   environment.systemPackages = with pkgs; [
