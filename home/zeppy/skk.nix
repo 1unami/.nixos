@@ -46,8 +46,8 @@
     discord
     audacious
     vlc
-    krita
-    vscode-fhs
+    #krita
+    #vscode-fhs
 
     vivaldi
     vivaldi-ffmpeg-codecs
@@ -64,8 +64,6 @@
     '';
     interactiveShellInit = ''
       set fish_greeting # Disable greeting
-    '';
-    promptInit = ''
       any-nix-shell fish --info-right | source
     '';
     shellAliases = {
