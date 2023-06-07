@@ -47,7 +47,7 @@
     audacious
     vlc
     #krita
-    #vscode-fhs
+    vscode-fhs
 
     vivaldi
     vivaldi-ffmpeg-codecs
