@@ -5,6 +5,7 @@
 
   #services.tlp.enable = true;
   programs.steam.enable = true; # steam needs to by installed system-wide :(
+  programs.fish.enable = true;
 
   environment.systemPackages = with pkgs; [
     gitMinimal

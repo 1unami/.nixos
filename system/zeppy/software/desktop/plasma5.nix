@@ -13,4 +13,10 @@
   environment.plasma5.excludePackages = [
     pkgs.libsForQt5.elisa
   ];
+
+  environment.systemPackages = with pkgs; [
+    plasma-pa
+  ];
+
+  xdg.portal.enable = true;
 }

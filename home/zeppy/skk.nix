@@ -54,7 +54,7 @@
   ];
 
   programs.fish = {
-    enable = true;
+    #enable = true;
     shellInit = ''
       set -Ux PIPENV_VENV_IN_PROJECT 1
       set -x HSA_OVERRIDE_GFX_VERSION 10.3.0
