@@ -17,6 +17,9 @@
 
     rsync
     curl
+
+    python311
+    pipenv
   ];
 
   environment.variables = {
