@@ -18,7 +18,7 @@
     rsync
     curl
 
-    python311
+    python3Minimal
     pipenv
   ];
 

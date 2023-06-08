@@ -36,7 +36,7 @@
   
   programs.mangohud = {
     enable = true;
-    enableSessionWide = true;
+    #enableSessionWide = true;
   };
 
   home.packages = with pkgs; [
@@ -48,6 +48,7 @@
     vlc
     #krita
     vscode-fhs
+    legendary-gl
 
     vivaldi
     vivaldi-ffmpeg-codecs
