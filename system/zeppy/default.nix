@@ -12,7 +12,7 @@
     ./boot
     ./software
     ./gpu/amd.nix
-    ./gpu/nvidia.nix
+    #./gpu/nvidia.nix
 
     # Import your generated (nixos-generate-config) hardware configuration
     ./hardware.nix
