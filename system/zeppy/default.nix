@@ -66,6 +66,7 @@
       "/etc/nixos"
       "/etc/NetworkManager"
       "/var/log"
+      "/vol"
     ];
     files = [
       "/etc/machine-id"

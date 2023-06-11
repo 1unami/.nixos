@@ -49,6 +49,8 @@
     #krita
     vscode-fhs
     legendary-gl
+    parsec-bin
+    #grapejuice
 
     vivaldi
     vivaldi-ffmpeg-codecs
