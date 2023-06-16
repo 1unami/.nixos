@@ -12,6 +12,10 @@
   ];
 
   services.tailscale.enable = true;
+  services.openssh = {
+    enable = true;
+    passwordAuthentication = true;
+  };
   virtualisation.docker.enable = true;
 
   environment.variables = {
