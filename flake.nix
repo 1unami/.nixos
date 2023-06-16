@@ -29,7 +29,7 @@
       };
       "srv.contingency" = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs; };
-	modules = [ ./system/srv.contingency/default.nix ];
+	modules = [ ./system/srv-contingency ];
       };
     };
 
@@ -45,7 +45,7 @@
       "a0@srv.contingency" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
 	extraSpecialArgs = { inherit inputs; };
-	modules = [ ./home/srv.contingency/a0.nix ];
+	modules = [ ./home/srv-contingency/a0.nix ];
       };
     };
   };

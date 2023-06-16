@@ -69,7 +69,7 @@
   services.fstrim.enable = true;
 
   ## networking
-  networking.hostName = "srv.contingency";
+  networking.hostName = "srv-contingency";
   networking.networkmanager.enable = true;
 
   ## time
