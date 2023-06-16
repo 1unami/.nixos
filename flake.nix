@@ -27,6 +27,10 @@
         # > Our main nixos configuration file <
         modules = [ ./system/zeppy ];
       };
+      "srv.contingency" = nixpkgs.lib.nixosSystem {
+        specialArgs = { inherit inputs; };
+	modules = [ ./system/srv.contingency/default.nix ];
+      };
     };
 
     # Standalone home-manager configuration entrypoint
@@ -37,6 +41,11 @@
         extraSpecialArgs = { inherit inputs; }; # Pass flake inputs to our config
         # > Our main home-manager configuration file <
         modules = [ ./home/zeppy/skk.nix ];
+      };
+      "a0@srv.contingency" = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.x86_64-linux;
+	extraSpecialArgs = { inherit inputs; };
+	modules = [ ./home/srv.contingency/a0.nix ];
       };
     };
   };
