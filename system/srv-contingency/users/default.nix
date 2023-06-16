@@ -3,5 +3,5 @@
     ./a0.nix
   ];
 
-  users.mutableUsers = false;
+  users.mutableUsers = true;
 }
