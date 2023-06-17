@@ -47,10 +47,17 @@
     audacious
     vlc
     #krita
-    vscode-fhs
     legendary-gl
     parsec-bin
     #grapejuice
+
+    vscode-fhs
+    dotnet-sdk_7
+
+    skypeforlinux
+    xournalpp
+    #wacomtablet
+    #gnome.adwaita-icon-theme
 
     vivaldi
     vivaldi-ffmpeg-codecs

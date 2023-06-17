@@ -16,7 +16,10 @@
 
   environment.systemPackages = with pkgs; [
     plasma-pa
+    wacomtablet
+    gnome.adwaita-icon-theme
   ];
 
+  services.xserver.wacom.enable = true;
   xdg.portal.enable = true;
 }

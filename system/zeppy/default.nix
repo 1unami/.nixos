@@ -67,6 +67,7 @@
       "/etc/NetworkManager"
       "/var/log"
       "/vol"
+      "/var/lib"
     ];
     files = [
       "/etc/machine-id"
