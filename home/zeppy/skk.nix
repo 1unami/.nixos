@@ -50,6 +50,8 @@
     legendary-gl
     parsec-bin
     #grapejuice
+    prismlauncher
+    temurin-bin-17
 
     vscode-fhs
     dotnet-sdk_7
