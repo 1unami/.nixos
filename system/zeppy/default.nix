@@ -66,7 +66,6 @@
       "/etc/nixos"
       "/etc/NetworkManager"
       "/var/log"
-      "/vol"
       "/var/lib"
     ];
     files = [

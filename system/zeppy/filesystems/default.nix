@@ -7,9 +7,9 @@
   fileSystems."/@".neededForBoot = true; # persist partition
 
   # internal nvme
-  fileSystems."/vol/data" = {
-    device = "/dev/vg_data/fast";
-    fsType = "xfs";
-    options = [ "defaults" "noatime" "nofail" ];
+  fileSystems."/@/nvme" = {
+    device = "/dev/vg_data/nvme";
+    fsType = "ext4";
+    options = [ "defaults" "noatime" "nofail" "discard" "nodiratime" "commit=60" "errors=remount-ro" ];
   };
 }
