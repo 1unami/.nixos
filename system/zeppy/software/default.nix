@@ -29,7 +29,7 @@
   #  lxd.enable = true;
     podman = {
       enable = true;
-      dockerCompact = false;
+      dockerCompat = false;
       
       defaultNetwork.settings = {
         dns_enabled = true;
