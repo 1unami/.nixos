@@ -20,12 +20,22 @@
 
     python3Minimal
     pipenv
+
+    distrobox
   ];
 
-  #virtualisation = {
+  virtualisation = {
   #  waydroid.enable = true;
   #  lxd.enable = true;
-  #};
+    podman = {
+      enable = true;
+      dockerCompact = false;
+      
+      defaultNetwork.settings = {
+        dns_enabled = true;
+      };
+    };
+  };
 
   environment.variables = {
     EDITOR = "nvim";
