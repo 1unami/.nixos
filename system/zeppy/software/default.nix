@@ -22,6 +22,7 @@
     pipenv
 
     distrobox
+    qemu
   ];
 
   virtualisation = {
