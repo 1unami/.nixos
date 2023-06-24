@@ -55,6 +55,7 @@
 
     vscode-fhs
     dotnet-sdk_7
+    jetbrains-toolbox
 
     skypeforlinux
     xournalpp
