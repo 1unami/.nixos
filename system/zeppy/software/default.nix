@@ -9,6 +9,7 @@
   programs.dconf.enable = true;
 
   services.tailscale.enable = true;
+  services.openssh.enable = true;
 
   environment.systemPackages = with pkgs; [
     gitMinimal
