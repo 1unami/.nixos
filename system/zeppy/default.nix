@@ -64,6 +64,7 @@
   environment.persistence."/@" = {
     directories = [
       "/etc/nixos"
+      "/etc/libvirt/hooks"
       "/etc/NetworkManager"
       "/var/log"
       "/var/lib"
