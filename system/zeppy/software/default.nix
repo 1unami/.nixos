@@ -6,6 +6,9 @@
   #services.tlp.enable = true;
   programs.steam.enable = true; # steam needs to by installed system-wide :(
   programs.fish.enable = true;
+  programs.dconf.enable = true;
+
+  services.tailscale.enable = true;
 
   environment.systemPackages = with pkgs; [
     gitMinimal
@@ -23,6 +26,7 @@
 
     distrobox
     qemu
+    virt-manager
   ];
 
   virtualisation = {
@@ -36,6 +40,7 @@
         dns_enabled = true;
       };
     };
+    libvirtd.enable = true;
   };
 
   environment.variables = {
