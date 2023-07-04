@@ -28,11 +28,23 @@
     distrobox
     qemu
     virt-manager
+
+    wl-clipboard
+  ];
+
+  nixpkgs.overlays = [
+    (final: prev: {
+      steam = prev.steam.override ({ extraPkgs ? pkgs': [], ... }: {
+        extraPkgs = pkgs': (extraPkgs pkgs') ++ (with pkgs'; [
+          openssl
+	]);
+      });
+    })
   ];
 
   virtualisation = {
-  #  waydroid.enable = true;
-  #  lxd.enable = true;
+    #waydroid.enable = true;
+    #lxd.enable = true;
     podman = {
       enable = true;
       dockerCompat = false;

@@ -10,6 +10,15 @@
       enable = true;
       device = "nodev";
       efiSupport = true;
+      extraEntries = ''
+        insmod lvm
+
+        menuentry "Bliss (default)" {
+          set SOURCE_NAME="bliss" search --set=root --file /$SOURCE_NAME/kernel
+	  linux /$SOURCE_NAME/kernel FFMPEG_CODEC=1 FFMPEG_PREFER_C2=1 root=/dev/ram0 SRC=/$SOURCE_NAME
+	  initrd /$SOURCE_NAME/initrd.img
+	}
+      '';
     };
   };
 

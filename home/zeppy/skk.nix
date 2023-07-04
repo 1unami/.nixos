@@ -42,16 +42,19 @@
   home.packages = with pkgs; [
     any-nix-shell
 
-    lutris
     discord
     audacious
     vlc
-    #krita
+    krita
+
+    lutris
     legendary-gl
     parsec-bin
     #grapejuice
     prismlauncher
+
     #temurin-bin-17
+    temurin-jre-bin-8
 
     vscode-fhs
     dotnet-sdk_7
@@ -59,7 +62,7 @@
 
     skypeforlinux
     xournalpp
-    #wacomtablet
+    wacomtablet
     #gnome.adwaita-icon-theme
 
     vivaldi
