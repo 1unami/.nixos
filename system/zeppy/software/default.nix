@@ -53,7 +53,22 @@
         dns_enabled = true;
       };
     };
-    libvirtd.enable = true;
+    libvirtd = {
+      enable = true;
+      #qemu.verbatimConfig = ''
+      #  user = "skk"
+      #'';
+    };
+  };
+
+  environment.etc = {
+    "libvirt/qemu.conf" = {
+      text = ''
+        user = "skk"
+      '';
+
+      mode = "0644";
+    };
   };
 
   environment.variables = {

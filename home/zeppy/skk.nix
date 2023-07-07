@@ -52,6 +52,7 @@
     parsec-bin
     #grapejuice
     prismlauncher
+    lunar-client
 
     #temurin-bin-17
     temurin-jre-bin-8
