@@ -46,6 +46,7 @@
     audacious
     vlc
     krita
+    inetutils
 
     lutris
     legendary-gl
