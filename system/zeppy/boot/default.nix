@@ -1,7 +1,7 @@
 { pkgs, ... }: {
   boot.kernelPackages = pkgs.linuxPackages_latest;
-  boot.kernelParams = [ "amd_pstate=active" "amdgpu.ppfeaturemask=0xfff7ffff" "vfio-pci.ids=10de:1401,10de:0fba" ];
-  boot.kernelModules = [ "vfio_pci" "vfio" "vfio_iommu_type1" ];
+  boot.kernelParams = [ "amd_pstate=passive" "amd_pstate.replace=1" "amdgpu.ppfeaturemask=0xfff7ffff" "vfio-pci.ids=10de:1401,10de:0fba" ];
+  boot.kernelModules = [ "vfio_pci" "vfio" "vfio_iommu_type1" "msr" ];
 
   boot.loader = {
     efi.canTouchEfiVariables = true;

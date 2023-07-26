@@ -24,6 +24,10 @@
       allowUnfree = true;
       # Workaround for https://github.com/nix-community/home-manager/issues/2942
       allowUnfreePredicate = (_: true);
+      # github-desktop needs openssl-1.1.1 :(
+      permittedInsecurePackages = [
+        "openssl-1.1.1u"
+      ];
     };
   };
 
@@ -33,11 +37,14 @@
   };
 
   programs.home-manager.enable = true;
-  
   programs.mangohud = {
     enable = true;
     #enableSessionWide = true;
   };
+  #programs.nix-index = {
+  #  enable = true;
+  #  enableFishIntegration = true;
+  #};
 
   home.packages = with pkgs; [
     any-nix-shell
@@ -46,7 +53,11 @@
     audacious
     vlc
     krita
+    
     inetutils
+    util-linux
+    pciutils
+    nvme-cli
 
     lutris
     legendary-gl
@@ -59,8 +70,9 @@
     temurin-jre-bin-8
 
     vscode-fhs
-    dotnet-sdk_7
+    #dotnet-sdk_7
     jetbrains-toolbox
+    github-desktop
 
     skypeforlinux
     xournalpp

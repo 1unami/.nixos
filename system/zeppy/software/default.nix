@@ -8,6 +8,13 @@
   programs.fish.enable = true;
   programs.dconf.enable = true;
 
+  programs.nix-index = {
+    enable = true;
+    enableFishIntegration = true;
+    enableBashIntegration = false;
+    enableZshIntegration = false;
+  };
+
   services.tailscale.enable = true;
   services.openssh.enable = true;
 
@@ -16,11 +23,18 @@
     neovim
     tmux
 
-    nvtop-amd
+    nvtop
     htop
 
     rsync
     curl
+    binutils
+    file
+    inetutils
+    usbutils
+    pciutils
+
+    amdctl
 
     python3Minimal
     pipenv

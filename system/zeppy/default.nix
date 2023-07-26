@@ -14,6 +14,9 @@
     ./gpu/amd.nix
     #./gpu/nvidia.nix
 
+    # custom systemd services
+    ./services/00-amdctl-undervolt.nix
+
     # Import your generated (nixos-generate-config) hardware configuration
     ./hardware.nix
   ];
@@ -74,7 +77,12 @@
       "/etc/nix/id_rsa"
     ];
   };
-  
+ 
+  #powerManagement = {
+  #  enable = true;
+  #  cpuFreqGovernor = "schedutil";
+  #};
+
   zramSwap = {
     enable = true;
     memoryPercent = 100;
